@@ -1,0 +1,15 @@
+import React from 'react';
+import styles from './Tables.module.scss';
+import { Link } from 'react-router-dom';
+
+const Tables = (id) => (
+  <div className={styles.component}>
+    <h2>Tables view</h2>
+    <Link to={`${process.env.PUBLIC_URL}/tables/booking/:id`} activeClassName='active'>Booking {id}</Link>
+    <Link to={`${process.env.PUBLIC_URL}/tables/booking/new`} activeClassName='active'>New Booking</Link>
+    <Link to={`${process.env.PUBLIC_URL}/tables/events/:id`} activeClassName='active'>Event {id}</Link>
+    <Link to={`${process.env.PUBLIC_URL}/tables/events/new`} activeClassName='active'>New Event</Link>
+  </div>
+);
+
+export default Tables;
