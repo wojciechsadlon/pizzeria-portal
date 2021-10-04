@@ -1,11 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class MainLayout extends React.Component {
+  propTypes = {
+    children: PropTypes.node,
+  }
+
   render() {
-    const children = this.props;
     return (
       <div>
-        {children}
+        {this.props.children}
       </div>
     );
   }

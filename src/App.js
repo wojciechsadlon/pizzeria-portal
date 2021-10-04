@@ -10,7 +10,7 @@ import PageNav from './components/layout/PageNav/PageNav';
 
 function App() {
   return (
-    <BrowserRouter basename={'/panel'}>
+    <BrowserRouter >
       <MainLayout>
         <PageNav />
         <Switch>
