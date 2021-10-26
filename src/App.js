@@ -9,6 +9,8 @@ import Waiter from './components/views/Waiter/Waiter';
 import PageNav from './components/layout/PageNav/PageNav';
 import Order from './components/views/Waiter/order/Order';
 import NewOrder from './components/views/Waiter/order/NewOrder';
+import Events from './components/views/Tables/Events';
+import Booking from './components/views/Tables/Booking';
 
 function App() {
   return (
@@ -19,6 +21,10 @@ function App() {
           <Route exact path={`${process.env.PUBLIC_URL}/`} component={Homepage} />
           <Route exact path={process.env.PUBLIC_URL + '/login'} component={Login} />
           <Route exact path={process.env.PUBLIC_URL + '/tables'} component={Tables} />
+          <Route exact path={process.env.PUBLIC_URL + '/tables/events/new'} component={Events} />
+          <Route exact path={process.env.PUBLIC_URL + '/tables/events/:id'} component={Events} />
+          <Route exact path={process.env.PUBLIC_URL + '/tables/booking/new'} component={Booking} />
+          <Route exact path={process.env.PUBLIC_URL + '/tables/booking/:id'} component={Booking} />
           <Route exact path={process.env.PUBLIC_URL + '/kitchen'} component={Kitchen} />
           <Route exact path={process.env.PUBLIC_URL + '/waiter'} component={Waiter} />
           <Route path={process.env.PUBLIC_URL + '/waiter/order/new'} component={NewOrder} />
