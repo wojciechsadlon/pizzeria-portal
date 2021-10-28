@@ -1,11 +1,16 @@
 import React from 'react';
 import styles from './Tables.module.scss';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const Booking = () => (
+const Booking = (props) => (
   <div className={styles.component}>
-    <h2>Booking</h2>
+    <h2>Booking {props.match.params.id}</h2>
   </div>
 );
+
+Booking.propTypes = {
+  id: PropTypes.string,
+  match: PropTypes.object,
+};
 
 export default Booking;
