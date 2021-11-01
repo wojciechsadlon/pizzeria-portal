@@ -6,9 +6,6 @@ import PageNav from '../PageNav/PageNav';
 import Container from '@mui/material/Container';
 
 class MainLayout extends React.Component {
-  propTypes = {
-    children: PropTypes.node,
-  }
 
   render() {
     return (
@@ -27,5 +24,9 @@ class MainLayout extends React.Component {
     );
   }
 }
+
+MainLayout.propTypes = {
+  children: PropTypes.node,
+};
 
 export default MainLayout;

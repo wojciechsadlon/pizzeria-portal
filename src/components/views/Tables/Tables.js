@@ -75,6 +75,7 @@ const Tables = () => (
                     if(booking.hour === row && table === booking.tableId){
                       return (
                         <BasicModal
+                          key={booking.id}
                           hour={booking.hour}
                           duration={booking.bookLength}
                           name={booking.name}
@@ -136,6 +137,7 @@ const Tables = () => (
                     if(booking.hour === row && table === booking.tableId){
                       return (
                         <BasicModal
+                          key={booking.id}
                           hour={booking.hour}
                           duration={booking.bookLength}
                           name={booking.name}
@@ -144,7 +146,8 @@ const Tables = () => (
                     } else if (booking.hour !== row && table === booking.tableId) {
                       return (
                         <BasicModal
-                          name={'EMPTY'}
+                          key={booking.id}
+                          name="EMPTY"
                           table={table} />
                       );
                     }
