@@ -42,7 +42,7 @@ const Kitchen = () => (
           <TableCell>Product</TableCell>
           <TableCell>Extras</TableCell>
           <TableCell>Order</TableCell>
-          <TableCell>Completion</TableCell>
+          <TableCell>Change status</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
