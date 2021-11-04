@@ -28,12 +28,12 @@ class Waiter extends React.Component {
   changeStatus(id, status){
     const { changedTableStatus } = this.props;
 
-    this.tables?.map(table => {
+    this.props.tables.map(table => {
       if(table.id === id){
         table.status = status;
 
         changedTableStatus(table);
-        console.log(table, status);
+        console.log(table);
       }
     });
   }
@@ -53,19 +53,19 @@ class Waiter extends React.Component {
         );
       case 'ordered':
         return (
-          <Button onClick={this.changeStatus(id, 'prepared')}>prepared</Button>
+          <Button onClick={() => this.changeStatus(id, 'prepared')}>prepared</Button>
         );
       case 'prepared':
         return (
-          <Button onClick={this.changeStatus(id, 'delivered')}>delivered</Button>
+          <Button onClick={() => this.changeStatus(id, 'delivered')}>delivered</Button>
         );
       case 'delivered':
         return (
-          <Button onClick={this.changeStatus(id, 'paid')}>paid</Button>
+          <Button onClick={() => this.changeStatus(id, 'paid')}>paid</Button>
         );
       case 'paid':
         return (
-          <Button onClick={this.changeStatus(id, 'free')}>free</Button>
+          <Button onClick={() => this.changeStatus(id, 'free')}>free</Button>
         );
       default:
         return null;

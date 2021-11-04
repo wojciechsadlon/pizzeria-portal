@@ -37,15 +37,18 @@ export const fetchFromAPI = () => {
   };
 };
 
-export const pushToAPI = () => {
+export const pushToAPI = (h) => {
   return (dispatch, getState) => {
-    dispatch(tableStatus());
+    dispatch(tableStatus(dispatch));
 
     Axios
       .post(`${api.url}/api/${api.tables}`)
       .then(res => {
-        dispatch(fetchFromAPI());
+        dispatch(tableStatus(h));
       })
+      .then(
+        dispatch(fetchFromAPI())
+      )
       .catch(err => {
         dispatch(fetchError(err.message || true));
       });
