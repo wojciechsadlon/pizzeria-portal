@@ -44,12 +44,7 @@ export const pushToAPI = (table) => {
       .put(`${api.url}/api/${api.tables}/${table.id}`, table)
       .then(res => {
         dispatch(changeTableStatus(res.data));
-        console.log(res);
-      })
-      .then(
-        dispatch(fetchFromAPI())
-      )
-      .catch(err => {
+      }).catch(err => {
         dispatch(fetchError(err.message || true));
       });
   };
@@ -80,7 +75,9 @@ export default function reducer(statePart = [], action = {}) {
     case CHANGE_TABLE_STATUS: {
       return {
         ...statePart,
-        data: action.payload,
+        data: statePart.data.map(table =>
+          table.id === action.payload.id ? table = action.payload : table
+        ),
       };
     }
     case FETCH_ERROR: {
