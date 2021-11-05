@@ -33,7 +33,6 @@ class Waiter extends React.Component {
         table.status = status;
 
         changedTableStatus(table);
-        console.log(table);
       }
     });
   }
